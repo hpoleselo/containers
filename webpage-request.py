@@ -52,5 +52,10 @@ def main():
     response = checkPage(url)
     pageText = checkContent(response)
     print(pageText)
+    print("LOGGING: Page requested succesfully.")
+    url = str(url[8:])
+    file_str = url + ".txt"
+    with open(file_str, "w") as text_file:
+        text_file.write(pageText)
 
 main()
