@@ -3,10 +3,9 @@ FROM python:3.8-slim-buster
 # Environment variable to be passed
 ENV WEBSITE_URL www.facebook.com
 
-WORKDIR /data
+WORKDIR /ourAppData
 
-#VOLUME /data
-# HEkki
+VOLUME /ourAppData
 
 # Copy the requirements.txt file to our Docker image
 COPY requirements.txt .
