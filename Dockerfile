@@ -1,8 +1,5 @@
 FROM python:3.8-slim-buster
 
-# Environment variable to be passed
-ENV WEBSITE_URL www.facebook.com
-
 WORKDIR /ourAppData
 
 VOLUME /ourAppData
@@ -13,9 +10,12 @@ COPY requirements.txt .
 # Normalmente roda em buildtime
 RUN pip3 install -r requirements.txt
 
+# Environment variable to be passed
+ENV WEBSITE_URL google.com
+
 # Adding the Python program to the Docker image, since we're already in /data we use dot as the target directory for copying
 COPY webpage-request.py .
 
 # CMD e ENTRYPOINT  sao overridable on the command-line 
-#CMD ["python", "webpage-request.py", "echo ${WEBSITE_URL}"]
-CMD python webpage-request.py ${WEBSITE_URL}
+# Já que estamos buildando do docker-compose, damos o comando por lá
+#CMD python webpage-request.py ${WEBSITE_URL}

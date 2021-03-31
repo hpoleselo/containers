@@ -55,7 +55,7 @@ def main():
     print("LOGGING: Page requested succesfully.")
     url = str(url[8:])
     file_str = url + ".txt"
-    with open(file_str, "w") as text_file:
-        text_file.write(pageText)
+    #with open(file_str, "w") as text_file:
+    #    text_file.write(pageText)
 
 main()

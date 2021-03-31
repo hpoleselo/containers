@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  request1:
+    build: .
+    command: python webpage-request.py ${WEBSITE_URL1}
+
+  request2:
+    build: .
+    command: python webpage-request.py ${WEBSITE_URL2}
+  
