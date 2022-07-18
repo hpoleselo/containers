@@ -88,6 +88,18 @@ To check the results from our container:
 Passing environment variables to our container:
 `$ docker run --rm -e SITE_URL=https://facebook.com/ -v $(pwd)/vol:/data/:rw our-first-dockercontainer`
 
+If we wanted to run a dettached proccess, i.e. after running it we leave the process to be running in the background and we can interact with the container using the current terminal session:
+
+` $ docker run -d -p 8080:80 container_image_name `
+
+## Setting Up Local Development a Breeze Using Docker
+
+Assuming we're running an API using uvicorn and FastAPI:
+
+` $ docker-compose up --build`
+
+Such that in the docker-compose file there will be a reference to the Dockerfile where we create a working directory in the container and this is referenced in the compose command along with the port mapping to the local computer.
+
 ## Mounting File/Directories to a Container in Windows
 
 1. Make sure to have HyperV instead of WSL.
